@@ -4,6 +4,14 @@ Azure Key Vault demos
 
 ## Generate Certificates
 
+This example borrows heavily
+[estiller/build-pki-net-azure-sample](https://github.com/estiller/build-pki-net-azure-sample)
+and
+[novotnyllc/RSAKeyVaultProvider](https://github.com/novotnyllc/RSAKeyVaultProvider).
+Credits to those authors.
+
+---
+
 Here is example if you want to create certificate chain (based on [this](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/certauth)):
 
 ```powershell
