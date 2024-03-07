@@ -3,9 +3,7 @@ using Azure.Security.KeyVault.Certificates;
 using Microsoft.Extensions.Configuration;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Cryptography;
-using System.Reflection.Metadata;
 using System.Numerics;
-using Azure.Security.KeyVault.Secrets;
 using Azure.Security.KeyVault.Keys;
 
 const string SubjectIdExtensionOid = "2.5.29.14";
@@ -20,11 +18,12 @@ var vaultUrl = config["vaultUrl"];
 var caPath = config["caPath"]; // Example: IntermediateCA.pfx
 var caPassword = config["caPassword"];
 var caName = config["caName"];
+var import = true;
 
 var certificateClient = new CertificateClient(new Uri(vaultUrl), new DefaultAzureCredential());
 
 // Step 1: Import the CA certificate
-if (string.IsNullOrEmpty(caName))
+if (import)
 {
     Console.WriteLine("Importing CA certificate...");
     var caData = File.ReadAllBytes(caPath);
