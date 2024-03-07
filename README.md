@@ -38,19 +38,16 @@ Get-ChildItem -Path cert:\localMachine\my\$($intermediateCertificate.Thumbprint)
   Export-PfxCertificate -FilePath IntermediateCertificate.pfx -Password $intermediatePassword
 
 Export-Certificate -Cert cert:\localMachine\my\$($intermediateCertificate.Thumbprint) -FilePath IntermediateCertificate.crt
+```
 
-# Create Server Certificate
-$serverCertificate = New-SelfSignedCertificate `
-  -CertStoreLocation cert:\localmachine\my `
-  -DnsName "server.janne" `
-  -FriendlyName "server.janne" `
-  -Signer $intermediateCertificate `
-  -NotAfter (Get-Date).AddYears(20)
+Now you can use `IntermediateCertificate.pfx` and it's password `2345` to
+run example application `GenerateCertificate` folder.
+It uploads this to Azure Key Vault and then uses it to generate
+other certificates.
 
-$serverPassword = ConvertTo-SecureString -String "3456" -Force -AsPlainText
+You can then upload that newly created certificate to Entra ID to service principal and
+use it to authenticate to Azure. 
 
-Get-ChildItem -Path cert:\localMachine\my\$($serverCertificate.Thumbprint) | 
-  Export-PfxCertificate -FilePath Server.pfx -Password $serverPassword
-
-Export-Certificate -Cert cert:\localMachine\my\$($serverCertificate.Thumbprint) -FilePath Server.crt
+```powershell
+Connect-AzAccount -ServicePrincipal -ApplicationId $appid -Tenant $tenantid -CertificateThumbprint $thumbprint
 ```
