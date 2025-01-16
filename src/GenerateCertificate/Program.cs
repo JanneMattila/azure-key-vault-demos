@@ -43,6 +43,7 @@ else
 // Step 2: Fetch the CA certificate from the Key Vault
 Console.WriteLine("Fetching CA certificate...");
 var caCertificate = await certificateClient.GetCertificateAsync(caName);
+
 Console.WriteLine($"CA: {caCertificate.Value.Name}");
 Console.WriteLine($"CA SecretId: {caCertificate.Value.SecretId}");
 
