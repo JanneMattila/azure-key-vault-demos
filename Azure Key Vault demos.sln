@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5D48B54B-C46
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateCertificate", "src\GenerateCertificate\GenerateCertificate.csproj", "{82F4E05E-0CBD-4782-BCA5-7E663AB8E045}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignCertificate", "src\SignCertificate\SignCertificate.csproj", "{075060A5-AC9E-4FF7-BA0D-E0B099FB5550}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +19,16 @@ Global
 		{82F4E05E-0CBD-4782-BCA5-7E663AB8E045}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82F4E05E-0CBD-4782-BCA5-7E663AB8E045}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82F4E05E-0CBD-4782-BCA5-7E663AB8E045}.Release|Any CPU.Build.0 = Release|Any CPU
+		{075060A5-AC9E-4FF7-BA0D-E0B099FB5550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{075060A5-AC9E-4FF7-BA0D-E0B099FB5550}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{075060A5-AC9E-4FF7-BA0D-E0B099FB5550}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{075060A5-AC9E-4FF7-BA0D-E0B099FB5550}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{82F4E05E-0CBD-4782-BCA5-7E663AB8E045} = {5D48B54B-C465-45C1-951A-9989EB269DF9}
+		{075060A5-AC9E-4FF7-BA0D-E0B099FB5550} = {5D48B54B-C465-45C1-951A-9989EB269DF9}
 	EndGlobalSection
 EndGlobal

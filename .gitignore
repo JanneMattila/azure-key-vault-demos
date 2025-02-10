@@ -400,3 +400,9 @@ FodyWeavers.xsd
 **/*.pfx
 **/*.crt
 **/*.cer
+*.key
+*.pem
+*.srl
+*.csr
+*.inf
+*.key

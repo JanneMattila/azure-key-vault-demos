@@ -56,7 +56,7 @@ var cryptographyClient = keyClient.GetCryptographyClient(caName);
 
 // Step 3: Create a new certificate
 // Prepare the issuer
-using var issuerCertificate = new X509Certificate2(caCertificate.Value.Cer);
+using var issuerCertificate = X509CertificateLoader.LoadCertificate(caCertificate.Value.Cer);
 using var rsaCA = await cryptographyClient.CreateRSAAsync();
 
 // Prepare the key
